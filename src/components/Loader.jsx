@@ -1,0 +1,14 @@
+import { loader } from '../assets';
+
+const Loader = ({title}) => (
+  <div className='w-full flex justify-center items-center flex-col'>
+    <img src={loader} alt="loader" className='w-32 h-32 object-contain'/>
+    <h1 className='font-bold text-2xl text-white mt-2'>
+      {title || 'Loadingg'}</h1>
+  </div>
+);
+
+export default Loader;
+
+// object-contain : Thuộc tính phù hợp với đối tượng CSS được sử dụng để 
+// chỉ định cách thay đổi kích thước <img> hoặc <video> để phù hợp với vùng chứa của nó
