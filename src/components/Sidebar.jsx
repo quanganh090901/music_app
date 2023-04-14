@@ -2,13 +2,16 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { RiCloseLine} from 'react-icons/ri';
 import { HiOutlineMenu } from "react-icons/hi";
+import { HiOutlineHashtag, HiOutlineHome, HiOutlinePhotograph, HiOutlineUserGroup } from 'react-icons/hi';
 
 import { logo } from "../assets";
-import { links } from "../assets/constants";
+// import { links } from "../assets/constants";
+
+
 
 const NavLinks = () => (
   <div className="mt-10">
-    {links.map((item)=>(
+    {/* {links.map((item)=>(
       <NavLink 
       key={item.name}
       to={item.to}
@@ -17,7 +20,12 @@ const NavLinks = () => (
         <item.icon className="w-6 h-6 mr-2" />
         {item.name}
       </NavLink>
-    ))}
+    ))} */}
+
+    <NavLink to="/" className="flex flex-row justify-start items-center my-8 text-sm font-medium text-gray-400 hover:text-cyan-400" onClick={()=>{handleClick && handleClick()}}><HiOutlineHome className="w-6 h-6 mr-2" />Discover</NavLink>
+    <NavLink to="/around-you" className="flex flex-row justify-start items-center my-8 text-sm font-medium text-gray-400 hover:text-cyan-400" onClick={()=>{handleClick && handleClick()}}><HiOutlinePhotograph className="w-6 h-6 mr-2" />Around You</NavLink>
+    <NavLink to="/top-artists" className="flex flex-row justify-start items-center my-8 text-sm font-medium text-gray-400 hover:text-cyan-400" onClick={()=>{handleClick && handleClick()}}><HiOutlineUserGroup className="w-6 h-6 mr-2" />Top Artists</NavLink>
+    <NavLink to="/top-charts" className="flex flex-row justify-start items-center my-8 text-sm font-medium text-gray-400 hover:text-cyan-400" onClick={()=>{handleClick && handleClick()}}><HiOutlineHashtag className="w-6 h-6 mr-2" />Top Charts</NavLink>
   </div>
 )
 
